@@ -13,27 +13,21 @@ int main(){
         soma+=n1;
         par++;
     }
-    else
-        { 
-            if (n2%2 == 0)
-            {
-                soma+n2;
-                par++;
-            }
-            else
-               {
-                 if(n3%2 == 0)
-                 {
-                    soma+n3;
-                    par++;
-                }
-    else
+    if (n2%2 == 0)
     {
-        if(n4%2 == 0)
-        {
-        soma+n4;
+        soma+=n2;
         par++;
-        }
+    }
+    if(n3%2 == 0)
+    {
+        soma+=n3;
+        par++;
+    }
+    if(n4%2 == 0)
+    {
+        soma+=n4;
+        par++;
+    }
 
-            printf("\nA divisão de %.2f por %.2f é %.2f\n\n",n1, n2, n1/n2 );
+    printf("\nForam inseridos  %i números pares e a soma deles é %i.\n\n",par, soma);
 }
