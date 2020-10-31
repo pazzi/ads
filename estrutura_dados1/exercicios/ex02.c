@@ -5,6 +5,7 @@ int main(){
     float bruto, desconto;
     int dias;
     system("clear");
+    fflush(stdin);
     printf("\nInforme a quantidade de dias trabalhados: ");
     scanf("%i", &dias);
     bruto = 60 * dias;

@@ -11,10 +11,13 @@ int main(){
     long int anoIngresso;
     ano=tm.tm_year + 1900;
     system("clear");
+    fflush(stdin);
     printf("\nInforme o código do empregado:");
     scanf("%i",&codigo);
+    fflush(stdin);
     printf("\nInforme o ano do nascimento:");
     scanf("%ld",&anoNascimento);
+    fflush(stdin);
     printf("\nInforme o ano de ingresso:");
     scanf("%ld",&anoIngresso);
     printf("\nA idade do empregado é %ld anos\n", ano - anoNascimento);

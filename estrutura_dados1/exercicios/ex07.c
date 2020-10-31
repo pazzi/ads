@@ -4,6 +4,7 @@
 int main(){
     int timeCasa, timeAdversario;
     system("clear");
+    fflush(stdin);
     printf("\nInforme os gols marcados pela equipe da casa e pelo adversário ");
     scanf("%i %i", &timeCasa, &timeAdversario);
     if (timeCasa == timeAdversario)

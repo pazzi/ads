@@ -4,8 +4,10 @@
 int main(){
     float n1, n2;
     system("clear");
+    fflush(stdin);
     printf("\nInforme um número: ");
     scanf("%f", &n1);
+    fflush(stdin);
     printf("\nInforme outro número: ");
     scanf("%f", &n2);
     if (n2 != 0)
