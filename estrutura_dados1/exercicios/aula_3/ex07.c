@@ -8,3 +8,19 @@ Construa um programa em linguagem C que auxilie a tarefa do barista. Deverão se
 lidos do teclado o Amargor e o Aroma de uma amostra de café e impresso na tela se
 ela foi aprovada ou não.
 */
+#include <stdio.h>
+
+int main()
+{
+	char amargor;
+	char aroma;
+	while (1) 
+	{
+	printf("\nInforme o amargor do café [I-Intenso N-Não Intenso]: ");
+	scanf("%c",&amargor);
+	if ( amargor == "N" || amargor == "I")
+		break;
+	}
+	printf("\nInforme o Aroma do café: ");
+	scanf("%c",&amargor);
+}

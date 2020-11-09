@@ -14,3 +14,19 @@ No entanto, existe um método que possibilita a troca sem a utilização de uma 
 método e construa um programa em linguagem C para demonstrar o seu funcionamento.
 */
 
+#include <stdio.h>
+int main()
+{
+//	int umValor = 10, outroValor = 20;
+	int umValor, outroValor ;
+	printf("\n Informe umValor: ");
+	scanf("%d", &umValor);
+	printf("\n Informe outroValor: ");
+	scanf("%d", &outroValor);
+	printf("\nValores antes - umValor = %d e outroValor = %d\n", umValor, outroValor); 
+	umValor = umValor + outroValor;
+	outroValor = umValor - outroValor;
+	umValor = umValor - outroValor;
+	printf("\nValores depois das operações - umValor = %d e outroValor = %d\n", umValor, outroValor); 
+}
+

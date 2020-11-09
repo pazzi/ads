@@ -16,3 +16,16 @@ outroValor = ++ umValor;
 printf(" Um valor: %i\tOutro valor: %i\n\n", umValor, outroValor);
 }
 */
+#include <stdio.h>
+int main()
+{
+int umValor, outroValor;
+printf("\nO operador vai DEPOIS da variavel (umValor++):");
+umValor = 10;
+outroValor = umValor ++ ;
+printf(" Um valor: %i\tOutro valor: %i", umValor, outroValor);
+printf("\nO operador vai ANTES da variavel (++umValor):");
+umValor = 10;
+outroValor = ++ umValor;
+printf(" Um valor: %i\tOutro valor: %i\n\n", umValor, outroValor);
+}
