@@ -1,4 +1,10 @@
-/*A CFPL planeja instalar postes de iluminação em toda a extensão da Av. Ênio Pires de Camargo espaçados 60 metros entre si e, por isso, contratou um topógrafo para fazer as medições e fincar estacas exatamente nos locais onde os postes deverão ser instalados. Todos os postes serão equipados com lâmpadas de vapor sódio e, a cada 12 postes, um deles também será equipado com um transformador de energia. Construa um programa em linguagem C para auxiliar o trabalho do topógrafo a estabelecer onde os postes e os transformadores serão instalados. O programa deverá ler do teclado o comprimento total (em metros) da avenida e imprimir na tela a localização exata (também em metros) de todos os postes e transformadores. Ao final também deverá ser impressa na tela a quantidade total de postes e de transformadores que deverá ser comprada.*/
+/*A CFPL planeja instalar postes de iluminação em toda a extensão da Av. Ênio Pires de Camargo espaçados 60 metros entre si e, por isso, contratou um topógrafo
+  para fazer as medições e fincar estacas exatamente nos locais onde os postes deverão ser instalados. Todos os postes serão equipados com lâmpadas de vapor 
+  sódio e, a cada 12 postes, um deles também será equipado com um transformador de energia. Construa um programa em linguagem C para auxiliar o trabalho do 
+  topógrafo a estabelecer onde os postes e os transformadores serão instalados. O programa deverá ler do teclado o comprimento total (em metros) da avenida e
+  imprimir na tela a localização exata (também em metros) de todos os postes e transformadores. Ao final também deverá ser impressa na tela a quantidade total
+  de postes e de transformadores que deverá ser comprada.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
