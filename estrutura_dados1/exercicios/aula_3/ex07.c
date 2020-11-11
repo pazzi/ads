@@ -18,7 +18,7 @@ int main()
 	{
 	printf("\nInforme o amargor do café [I-Intenso N-Não Intenso]: ");
 	scanf("%c",&amargor);
-	if ( amargor == "N" || amargor == "I")
+	if ( amargor == 'N' || amargor == 'I')
 		break;
 	}
 	printf("\nInforme o Aroma do café: ");
