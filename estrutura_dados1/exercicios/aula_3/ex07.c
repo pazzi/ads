@@ -20,7 +20,9 @@ int main()
 	scanf("%c",&amargor);
 	if ( amargor == 'N' || amargor == 'I')
 		break;
-	}
-	printf("\nInforme o Aroma do café: ");
+	printf("\nInforme o Aroma do café [A-Amendoas N-Nozes C-Castanhas: ");
 	scanf("%c",&amargor);
+	}
+
+	printf("\nRESULTADO: ");
 }
