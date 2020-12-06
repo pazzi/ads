@@ -5,7 +5,7 @@ int main(){
 	system("clear");
 	int mtx[8];
 	int i;
-	for (i=0; i <= 7; i++)
+	for (i=0; i < 8; i++)
 	{
 		if(i == 0)
 		{
@@ -16,7 +16,7 @@ int main(){
 			mtx[i] = mtx[i-1] * i;
 		}
 	}
-	for (i=0; i <= 7; i++)
+	for (i=0; i < 8; i++)
 	{
 		printf("\n A matriz na posicao %i é :%i",  i, mtx[i]);
 	}
