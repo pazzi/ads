@@ -6,19 +6,18 @@ int main(){
 	int mtx1[12];
 	int mtx2[12];
 	int mtx3[12];
-	int oValor,vl,i,j,m,n=0;
-	for (i=0; i <= 11; i++)
+	int oValor,i,j,m,n=0;
+	for (i=0; i < 12; i++)
 	{
 		printf("\nInforme o valor %i de 12 posição %i do array de doze: ",i+1, i);
-		scanf(" %i",&vl);
-		mtx1[i]=vl;
+		scanf(" %i",&mtx1[i]);
 	}
 	printf("\nInforme um número para oValor:");
 	scanf(" %i", &oValor);
 
 printf("\n\n");
 
-	for (j=0; j <= 11; j++)
+	for (j=0; j < 12; j++)
 	{
 		if (mtx1[j] <= oValor)
 		{
