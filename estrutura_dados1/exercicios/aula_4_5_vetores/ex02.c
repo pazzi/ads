@@ -4,14 +4,13 @@
 int main(){
 	system("clear");
 	int mtx[8];
-	int i, vl;
+	int i;
 	for (i=0; i <= 7; i++)
 	{
 		if(i == 0)
 		{
 			printf("\nInforme o valor inicial da matriz: ");
-			scanf(" %i",&vl);
-			mtx[i]=vl;
+			scanf(" %i",&mtx[i]);
 		}
 		else{
 			mtx[i] = mtx[i-1] * i;
