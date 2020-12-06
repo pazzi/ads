@@ -15,19 +15,19 @@ printf("\n\n");
 
 	for (i=0; i < 12; i++)
 	{
-		if (mtx1[j] >= 0)
+		if (mtx1[i] >= 0)
 		{
-			mtx2[indicePositivo]=mtx1[j];
+			mtx2[indicePositivo]=mtx1[i];
 			indicePositivo++;
 
 		}else{
-			mtx3[indiceNegativo]=mtx1[j];
+			mtx3[indiceNegativo]=mtx1[i];
 			indiceNegativo++;
 		}
 	}
 
 printf("\n\n");
-printf("O array 1 terá %i valores: ", m);
+printf("O array 1 terá %i valores: ", indicePositivo);
 
 	for (i=0; i < indicePositivo; i++)
 	{
@@ -35,7 +35,7 @@ printf("O array 1 terá %i valores: ", m);
 			printf("%i ",  mtx2[i]);
 	}
 printf("\n\n");
-printf("O array 2 terá %i valores: ", n);
+printf("O array 2 terá %i valores: ", indiceNegativo);
 	for (i=0; i < indiceNegativo; i++)
 	{
 		if (mtx3[i] != 0)
