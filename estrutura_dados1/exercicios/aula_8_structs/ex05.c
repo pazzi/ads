@@ -15,16 +15,18 @@ struct produto
 
 int main()
 {
+ void limparBuffer(void);
   struct produto estoque[MAX] = {
                                    "Batata", 12.0, 23,
                                    "Cenoura", 34.0, 56,
                                    "Alho porroh", 78.0, 90,
                                    "Catuaba", 112.0, 34
                                 };
+  char ch;
   char umaDescricao[50];
   int umaQuantidade;
   int opcao, i;
-  do
+ do
   {
     system("clear");
     printf("\nControlinho de Estoque\n");
@@ -33,16 +35,17 @@ int main()
     printf("\n3. Impressao do estoque");
     printf("\n0. Sair");
     printf("\n\nDigite sua opcao: ");
-    scanf(" %i", &opcao);
+    scanf("%i", &opcao);
+    limparBuffer();
     switch(opcao)
     {
-      case 1: // inserir os produtos
+      case 1: /* inserir os produtos */
       {
         puts("\nInsercao dos produtos");
 
         for(i = 0; i < MAX; i++)
-        {
-          getchar();
+       {
+         getchar();
           printf("\nDigite a descricao do produto %i: ", i);
           gets(estoque[i].descricao);
           printf("\nDigite o preco do produto %i: ", i);
@@ -52,34 +55,46 @@ int main()
         }
         break;
       }
-      case 2: // retirada de produto
+      case 2: /* retirada de produto*/
       {
-        char umaDescricao[50];
+        char umaDescricao[50]="";
         int umaQuantidade;
         int existe, suficiente;
         printf("\nRetirada dos produtos");
         printf("\nDigite a descricao do produto a ser retirado: ");
-        gets(umaDescricao);
+        fgets(umaDescricao,50, stdin);
+	strtok(umaDescricao, "\n");
+//	limparBuffer();
+/*	
+	if(strlen(umaDescricao) == 49)
+	{
+		while ((ch = getchar()) != '\n' && ch != EOF);
+	}
+	*/
+
         do
         {
           printf("\nDigite a quantidade a ser retirada do produto: ");
-          scanf("%i", &umaQuantidade);
+          scanf(" %i", &umaQuantidade);
         }
         while(umaQuantidade <= 0);
-        existe = 0; // falso que existe
-        suficiente = 0;  //falso que eh suficiente
+
+        existe = 0; /* falso que existe*/
+        suficiente = 0;  /*falso que eh suficiente*/
         for(i = 0; i < MAX && !existe; i++)
         {
-          if(strcmp(estoque[i].descricao, umaDescricao) == 0) // achou a descircao do produto no estoque
+          if(strcmp(estoque[i].descricao, umaDescricao) == 0) /* achou a descircao do produto no estoque*/
           {
-            existe = 1; // verdadeiro que existe
+            existe = 1; /* verdadeiro que existe */
             if(umaQuantidade <= estoque[i].quantidade)
             {
-              suficiente = 1; // verdadeiro que a quantidade eh suficiente para retirada
+              suficiente = 1; /* verdadeiro que a quantidade eh suficiente para retirada */
               estoque[i].quantidade-=umaQuantidade;
             }
           }
-        } // for
+        } /* for */
+
+	limparBuffer(); 
         if(!existe)
         {
           printf("\nO produto %s nao existe no estoque!", umaDescricao);
@@ -88,15 +103,14 @@ int main()
         {
           if(!suficiente)
           {
-            printf("\nA quantidade do produto %s nao eh suficiente para permitir a retirada de %i itens!",
-                   umaDescricao, umaQuantidade);
+            printf("\nA quantidade do produto %s nao eh suficiente para permitir a retirada de %i itens!", umaDescricao, umaQuantidade);
           }
           else
           {
             printf("\nA retirada de %i itens do produto %s foi realizada com sucesso.", umaQuantidade, umaDescricao);
           }
         }
-
+	getchar();
         break;
       }
 
@@ -112,6 +126,7 @@ int main()
           valorTotal += (estoque[i].preco * estoque[i].quantidade);
         }
         printf("\n\nValor total do estoque: R$ %.2f\n", valorTotal);
+	getchar();
         break;
       }
 
@@ -124,9 +139,18 @@ int main()
       {
         puts("\nOpcao i n v a l i d a!\n");
       }
-    } // switch
+    } /* switch */
     printf("\n");
+    
   }
   while(opcao != 0);
+   
 return 0;
+}
+
+void limparBuffer(void)
+{
+	char caracter;
+	while ((caracter = getchar()) != '\n' && caracter != EOF);
+
 }
