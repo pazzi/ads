@@ -5,7 +5,6 @@
 #include <curses.h>
 
 #define MAX 4
-
 struct produto
 {
   char descricao[50];
