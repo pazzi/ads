@@ -46,7 +46,7 @@ int main()
        {
          getchar();
           printf("\nDigite a descricao do produto %i: ", i);
-          gets(estoque[i].descricao);
+          fgets(estoque[i].descricao,50, stdin);
           printf("\nDigite o preco do produto %i: ", i);
           scanf("%f", &estoque[i].preco);
           printf("\nDigite a quantidade do produto %i: ", i);
@@ -63,11 +63,14 @@ int main()
         printf("\nDigite a descricao do produto a ser retirado: ");
         fgets(umaDescricao,50, stdin);
 	strtok(umaDescricao, "\n");
+	/*
 //	limparBuffer();
-/*	
+	
 	if(strlen(umaDescricao) == 49)
 	{
+	*/
 		while ((ch = getchar()) != '\n' && ch != EOF);
+		/*
 	}
 	*/
 
