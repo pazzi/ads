@@ -4,7 +4,7 @@
 #include <curses.h>
 #include <ctype.h>
 
-#define MAXESTOQUE 2
+#define MAXESTOQUE 80 
 int i, quantidade;
 double produto;
 
