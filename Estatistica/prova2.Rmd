@@ -1,0 +1,86 @@
+---
+title: "Prova 2 de Estatística"
+author: "Carlos Benjamim Pazzianotto"
+date: "16 de fevereiro de 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Questão 1
+
+Uma urna contém 8 bolas brancas e 12 vermelhas. Retiram-se 10 bolas com reposição. Qual a probabilidade de que:  
+a) no máximo 2 sejam brancas?  
+b) 3 sejam brancas?  
+  
+a) 0,26927 e b) 0,35981  
+a) 0,475921 e b) 0,637419  
+a) 0,16729 e b) 0,21499  
+a) 0,87459 e b) 0,64357  
+a) 0,57489 e b) 0,65447  
+
+`---
+Resolução com R
+---
+
+```{r}
+pbinom(q=2, size=10, prob=2/5)
+```
+
+```{r}
+dbinom(x=3, size=10, prob=2/5)
+```
+(Questão vale 0.5 ponto - resposta: alternativa **c**)
+
+## Questão 2  
+Na fabricação de peças de determinado tecido aparecem defeitos ao acaso, um a cada 250 m. Qual a probabilidade de que na produção de 1.000 m aconteçam pelo menos três defeitos?  
+
+a) 0,98741  
+b) 0,761896  
+c) 0,18647  
+d) 0,16458  
+e) 0,452789
+
+(Questão vale 0.5 ponto)
+
+## Questão 3  
+
+A concentração de um poluente em água liberada por uma fábrica tem distribuição X:N(8 ; 2,25). Qual a chance, de que num dado dia, a concentração do poluente exceda o limite regulatório de 10 ppm?  
+
+a) 8%  
+b) 3%  
+c) 2%  
+d) 1%  
+e) 9,17%  
+
+(Questão vale 0.5 ponto)
+
+## Questão 4    
+
+O volume de correspondência recebido por uma firma quinzenalmente tem distribuição normal com média de 4.000 cartas e desvio padrão
+de 200 cartas. Qual a porcentagem de quinzenas em que a firma recebe:  
+a) entre 3.600 e 4.250 cartas?  
+b) menos de 3.400 cartas?  
+
+a) 100% b) 0,135%  
+b) 7,16% b) 0,135%  
+c) 87,16% b) 85,135%  
+d) 97,16% b) 2,135%  
+e) 87,16% b) 0,135%  
+
+(Questão vale 1 ponto)
+
+## Questão 5    
+
+Um certo tipo de rato apresenta, nos três primeiros meses de vida, um ganho médio de peso de 58 g. Uma amostra de 10 ratos foi
+alimentada desde o nascimento até a idade de 3 meses com uma ração especial, e o ganho de peso de cada rato foi: 55, 58, 60, 62, 65, 67,54, 64, 62 e 68. Nesse caso, há razões para crer, ao nível de 5%, que a ração especial aumenta o peso nos 3 primeiros meses de vida. Qual é o valor de Tcal nesse problema?  
+
+a) 0.5  
+b) 3  
+c) 1,5  
+d) 1  
+e) 2,32  
+
+(Questão vale 0.5 ponto)
