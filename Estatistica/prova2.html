@@ -454,7 +454,8 @@ b) 3 sejam brancas?</p>
 </li>
 <li>0,57489 e b) 0,65447</li>
 </ol>
-<p>`— Resolução com R —</p>
+<p>`— Resolução com R - Distribuição Binomial!<br />
+—</p>
 <pre class="r"><code>pbinom(q=2, size=10, prob=2/5)</code></pre>
 <pre><code>## [1] 0.1672898</code></pre>
 <pre class="r"><code>dbinom(x=3, size=10, prob=2/5)</code></pre>
@@ -475,7 +476,14 @@ b) 3 sejam brancas?</p>
 </li>
 <li>0,452789</li>
 </ol>
-<p>(Questão vale 0.5 ponto)</p>
+<p>(Questão vale 0.5 ponto - resposta: alternativa <strong>b</strong>)</p>
+<p>Uso da distribuição de Poisson<br />
+Se ocorre um defeito a cada 250m ocorrerá 4 defeitos em 1000m<br />
+E para ocorrerem pelo menos 3, devemos ter <span class="math inline">\(P(Y&gt;=3) = 1 - P(Y&lt;3) =&gt; P(Y&gt;=3) = 1 - [P(Y=0) + P(Y=1) + P(Y=2)]\)</span></p>
+<pre class="r"><code>1 - dpois(0, lambda=4) - dpois(1, lambda=4) - dpois(2, lambda=4)</code></pre>
+<pre><code>## [1] 0.7618967</code></pre>
+<pre class="r"><code>1 - ppois(2, lambda=4)</code></pre>
+<pre><code>## [1] 0.7618967</code></pre>
 </div>
 <div id="questão-3" class="section level2">
 <h2>Questão 3</h2>
@@ -491,7 +499,10 @@ b) 3 sejam brancas?</p>
 </li>
 <li>9,17%</li>
 </ol>
-<p>(Questão vale 0.5 ponto)</p>
+<p>No enunciado o <span class="math inline">\(\sigma\)</span> está ao quadrado, para usá-lo no R teremos que executar a raiz quadrada, assim <span class="math inline">\(\sigma^ 2 = 2,25 =&gt; \sigma = 1.5\)</span></p>
+<pre class="r"><code>(1 - pnorm(10,8,1.5))*100</code></pre>
+<pre><code>## [1] 9.121122</code></pre>
+<p>(Questão vale 0.5 ponto - resposta: alternativa <strong>e</strong>)</p>
 </div>
 <div id="questão-4" class="section level2">
 <h2>Questão 4</h2>
@@ -505,11 +516,14 @@ b) menos de 3.400 cartas?</p>
 </li>
 <li>87,16% b) 85,135%<br />
 </li>
-<li>97,16% b) 2,135%<br />
-</li>
-<li>87,16% b) 0,135%</li>
+<li><p>97,16% b) 2,135%</p></li>
+<li><p>87,16% b) 0,135%</p></li>
 </ol>
-<p>(Questão vale 1 ponto)</p>
+<p>(Questão vale 1 ponto - resposta: alternativa <strong>e</strong>)</p>
+<pre class="r"><code>(pnorm(4250,4000,200) - pnorm(3600, 4000,200)) * 100</code></pre>
+<pre><code>## [1] 87.16001</code></pre>
+<pre class="r"><code>(pnorm(3400,4000,200)) * 100</code></pre>
+<pre><code>## [1] 0.1349898</code></pre>
 </div>
 <div id="questão-5" class="section level2">
 <h2>Questão 5</h2>

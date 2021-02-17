@@ -22,7 +22,7 @@ a) 0,87459 e b) 0,64357
 a) 0,57489 e b) 0,65447  
 
 `---
-Resolução com R
+Resolução com R - Distribuição Binomial!  
 ---
 
 ```{r}
@@ -43,7 +43,19 @@ c) 0,18647
 d) 0,16458  
 e) 0,452789
 
-(Questão vale 0.5 ponto)
+(Questão vale 0.5 ponto - resposta: alternativa **b**)
+
+Uso da distribuição de Poisson  
+Se ocorre um defeito a cada 250m ocorrerá 4 defeitos em 1000m  
+E para ocorrerem pelo menos 3, devemos ter $P(Y>=3) = 1 - P(Y<3) =>  P(Y>=3) = 1 - [P(Y=0) + P(Y=1) + P(Y=2)]$
+
+```{r}
+1 - dpois(0, lambda=4) - dpois(1, lambda=4) - dpois(2, lambda=4)
+```
+
+```{r}
+1 - ppois(2, lambda=4)
+```
 
 ## Questão 3  
 
@@ -55,12 +67,16 @@ c) 2%
 d) 1%  
 e) 9,17%  
 
-(Questão vale 0.5 ponto)
+No enunciado o $\sigma$ está ao quadrado, para usá-lo no R teremos que executar a raiz quadrada, assim $\sigma^ 2 = 2,25 => \sigma = 1.5$
+
+```{r}
+(1 - pnorm(10,8,1.5))*100
+```
+(Questão vale 0.5 ponto - resposta: alternativa **e**)
 
 ## Questão 4    
 
-O volume de correspondência recebido por uma firma quinzenalmente tem distribuição normal com média de 4.000 cartas e desvio padrão
-de 200 cartas. Qual a porcentagem de quinzenas em que a firma recebe:  
+O volume de correspondência recebido por uma firma quinzenalmente tem distribuição normal com média de 4.000 cartas e desvio padrão de 200 cartas. Qual a porcentagem de quinzenas em que a firma recebe:  
 a) entre 3.600 e 4.250 cartas?  
 b) menos de 3.400 cartas?  
 
@@ -68,9 +84,18 @@ a) 100% b) 0,135%
 b) 7,16% b) 0,135%  
 c) 87,16% b) 85,135%  
 d) 97,16% b) 2,135%  
+
 e) 87,16% b) 0,135%  
 
-(Questão vale 1 ponto)
+(Questão vale 1 ponto - resposta: alternativa **e**)
+
+```{r}
+(pnorm(4250,4000,200) - pnorm(3600, 4000,200)) * 100
+```
+
+```{r}
+(pnorm(3400,4000,200)) * 100
+```
 
 ## Questão 5    
 
@@ -83,4 +108,24 @@ c) 1,5
 d) 1  
 e) 2,32  
 
-(Questão vale 0.5 ponto)
+(Questão vale 0.5 ponto - resposta: alternativa **e**)
+
+```{r}
+amostra <-c(55, 58, 60, 62, 65, 67, 54, 64, 62, 68)
+t.test(amostra, mu=58, alternative="two.sided", conf.level = 0.95)
+```
+Obs.:Rejeita-se a Ho (Hipótese Nula) pois t p-value é menor que 0.05
+Outra forma:  
+Verifica normalidade dos dados(p-value>0.05)
+```{r}
+library(dplyr)
+amostra <-c(55, 58, 60, 62, 65, 67, 54, 64, 62, 68)
+shapiro.test(amostra)
+
+```
+Fazer o teste T
+```{r}
+t.test(amostra, mu=58)
+
+```
+O teste T para uma amostra mostrou que a média de peso da amostra (61.5) é diferente da média afirmada(58) (t(9)=2.2319, p-value=0.04534)
