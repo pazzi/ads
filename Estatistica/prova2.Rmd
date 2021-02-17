@@ -128,4 +128,8 @@ Fazer o teste T
 t.test(amostra, mu=58)
 
 ```
-O teste T para uma amostra mostrou que a média de peso da amostra (61.5) é diferente da média afirmada(58) (t(9)=2.2319, p-value=0.04534)
+O teste T para uma amostra mostrou que a média de peso da amostra (61.5) é diferente da média afirmada(58) (t(grau de liberdade 9)=2.2319, p-value=0.04534)
+```{r}
+boxplot(amostra, ylab="Peso(gramas)")
+
+```
