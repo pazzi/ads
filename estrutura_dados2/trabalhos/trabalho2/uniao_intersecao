@@ -1,0 +1,170 @@
+
+struct no
+{
+    int valor;
+    struct no* proximo;
+};
+
+
+
+///     uniao( inicio1, inicio2, &inicio3);
+///     void(struct no  inicio1, struct no inicio2, No **inicio3);
+
+struct No *get_Union(struct No *inicio1, struct No *inicio2)
+{
+    struct No *result = NULL;
+    struct No *t1 = inicio1, *t2 = inicio2;
+
+    while (t1 != NULL && t2 != NULL)
+    {
+        if (t1->valor < t2->valor)
+        {
+            insert(&result, t1->valor);
+            t1 = t1->proximo;
+        }
+
+        else if (t1->valor>t2->valor)
+        {
+            insert(&result, t2->valor);
+            t2 = t2->proximo;
+        }
+        else
+        {
+            insert(&result, t2->valor);
+            t1 = t1->proximo;
+            t2 = t2->proximo;
+        }
+    }
+
+    while (t1 != NULL)
+    {
+        insert(&result, t1->valor);
+        t1 = t1->proximo;
+    }
+    while (t2 != NULL)
+    {
+        insert(&result, t2->valor);
+        t2 = t2->proximo;
+    }
+
+    return result;
+}
+
+
+
+NO CODIGO
+
+void faz_Uniao(struct no *inicio1, struct no *inicio2, struct no **inicio3 )
+{
+    No *t1 = inicio1, *t2 = inicio2;
+
+    while (t1 != NULL && t2 != NULL)
+    {
+
+        if (t1->valor < t2->valor)
+        {
+            insert(&*inicio3, t1->valor);
+            t1 = t1->proximo;
+        }
+
+        else if (t1->valor > t2->valor)
+        {
+            insert(&*inicio3, t2->valor);
+            t2 = t2->proximo;
+        }
+        else
+        {
+            insert(&*inicio3, t2->valor);
+            t1 = t1->proximo;
+            t2 = t2->proximo;
+        }
+	
+    }
+
+    while (t1 != NULL)
+    {
+        insert(&*inicio3, t1->valor);
+        t1 = t1->proximo;
+    }
+
+    while (t2 != NULL)
+    {
+        insert(&*inicio3, t2->valor);
+        t2 = t2->proximo;
+    }
+}
+
+
+
+
+void faz_Interseccao(struct no *inicio1, struct no *inicio2, struct no **inicio3)
+{
+    //struct No *result = NULL;
+    struct No *t1 = inicio1, *t2 = inicio2;
+
+    while (t1 != NULL && t2 != NULL)
+    {
+        if (t1->valor < t2->valor)
+            t1 = t1->proximo;
+
+        else if (t1->valor > t2->valor)
+            t2 = t2->proximo;
+
+        else
+        {
+            insert(&*inicio3, t2->valor);
+
+            t1 = t1->proximo;
+            t2 = t2->proximo;
+        }
+    }
+}
+
+void printList (struct No *node)
+{
+    while (node != NULL)
+    {
+        cout<<node->valor << " ";
+        node = node->proximo;
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    struct No* inicio1 = NULL;
+    struct No* inicio2 = NULL;
+    struct No* intersection_list = NULL;
+    struct No* union_list = NULL;
+
+    insert(&inicio1, 20);
+    insert(&inicio1, 4);
+    insert(&inicio1, 15);
+    insert(&inicio1, 10);
+    insert(&inicio1, 11);
+
+    insert(&inicio2, 10);
+    insert(&inicio2, 2);
+    insert(&inicio2, 4);
+    insert(&inicio2, 8);
+
+    Sort(&inicio1);
+    Sort(&inicio2);
+
+    intersection_list = get_Intersection(inicio1, inicio2);
+    union_list = get_Union(inicio1, inicio2);
+
+    cout<<"First list is \n";
+    printList(inicio1);
+
+    cout<<"\nSecond list is \n";
+    printList(inicio2);
+
+    cout<<"\nIntersection list is \n";
+    printList(intersection_list);
+
+    cout<<"\nUnion list is \n";
+    printList(union_list);
+
+    return 0;
+}

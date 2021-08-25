@@ -1,0 +1,52 @@
+void ordenar(No **inicio)
+{
+  No *aux1, *aux2, *qualSaiu, *inicioAuxiliar = NULL;
+  Coisa umaCoisa;
+  if(*inicio != NULL)
+  {
+    if((*inicio)->proximo == NULL)
+    {
+      printf("\nImpossivel ordenar. A lista tem somente um elemento.");
+    }
+    else
+    {
+      while(*inicio != NULL)
+      {
+        qualSaiu = *inicio;
+        *inicio = (*inicio)->proximo;
+        qualSaiu->proximo = NULL;
+        if(inicioAuxiliar == NULL)
+        {
+          inicioAuxiliar = qualSaiu;
+        }
+        else
+        {
+          if(ehMaiorACoisa(inicioAuxiliar->umaCoisa, qualSaiu->umaCoisa)) ///insere no inicio de inicioAuxiliar
+          {
+            qualSaiu->proximo = inicioAuxiliar;
+            inicioAuxiliar = qualSaiu;
+          }
+          else
+          {
+            aux1 = inicioAuxiliar;
+            aux2 = inicioAuxiliar->proximo;
+            while((aux2 != NULL) && (ehMaiorACoisa(qualSaiu->umaCoisa, aux2->umaCoisa)))
+            {
+              aux1 = aux2;
+              aux2 = aux2->proximo;
+            }
+            aux1->proximo = qualSaiu;
+            qualSaiu->proximo = aux2;
+          }
+        }
+      }
+      *inicio = inicioAuxiliar;
+      imprime(*inicio);
+      getch();
+    }
+  }
+  else
+  {
+    printf("\nImpossivel ordenar. Lista vazia.");
+  }
+}

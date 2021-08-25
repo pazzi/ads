@@ -1,0 +1,29 @@
+struct no
+{
+  int valor;
+  struct no *proximo;
+};
+
+typedef struct no No;
+
+insereNoFinal(&inicio2, novo);
+void insereNoFinal(No **inicio, No *novo)
+
+imprime(inicio2);
+void imprime(No *inicio)
+
+contaLista(inicio1);
+long int contaLista( struct no *inicio ) {
+
+struct no* proximoElemento( struct no *inicio, long int pos ) {
+return inicio;
+
+quickSort(inicio1,tam );
+void quickSort( struct no *inicio, long int tam )
+
+
+
+
+
+///	uniao( inicio1, inicio2, &inicio3);
+///	void(struct no  *inicio1, struct no *inicio2, No **inicio3);

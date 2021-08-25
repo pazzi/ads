@@ -1,0 +1,18 @@
+int pesquisar(No *inicio, Coisa umaCoisa)
+{
+  int achou = 0;
+  No *aux;
+  aux = inicio;
+  while(aux != NULL && !achou)
+  {
+    if(comparaCoisas(aux->umaCoisa, umaCoisa))
+    {
+      achou = 1;
+    }
+    else
+    {
+      aux = aux->prox;
+    }
+  }
+  return(achou);
+}
